@@ -8,11 +8,11 @@ const Projects = () => {
 			<div className='container'>
 				<h2 className='title-1'>Projects</h2>
 				<ul className='projects'>
-
-					{projects.map((project) => {
-						return <Project title={project.title} img={project.img} />;
+					{projects.map((project, index) => {
+						return (
+							<Project key={index} title={project.title} img={project.img} />
+						)
 					})}
-
 				</ul>
 			</div>
 		</main>
