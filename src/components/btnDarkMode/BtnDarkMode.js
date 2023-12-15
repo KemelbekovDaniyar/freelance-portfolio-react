@@ -3,9 +3,10 @@ import moon from './../../img/icons/moon.svg'
 import { useEffect, useRef } from 'react'
 import { useLocalStorage } from '../../utils/useLocalStorage'
 import './BtnDarkMode.css'
+import detecDarkMode from '../../utils/detecDarkMode'
 
 const BtnDarkMode = () => {
-	const [darkMode, setDarkMode] = useLocalStorage('darkMode', 'light')
+	const [darkMode, setDarkMode] = useLocalStorage('darkMode', detecDarkMode())
 
 	const btnRef = useRef(null)
 
