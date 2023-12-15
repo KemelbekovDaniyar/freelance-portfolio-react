@@ -1,5 +1,4 @@
 import Project from '../components/Projects/Projects'
-
 import { projects } from '../components/Helpers/ProjectsList'
 
 const Projects = () => {
