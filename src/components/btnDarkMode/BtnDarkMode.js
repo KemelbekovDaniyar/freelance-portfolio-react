@@ -11,18 +11,23 @@ const BtnDarkMode = () => {
 	const btnRef = useRef(null)
 
 	useEffect(() => {
-		if (darkMode === 'dark') {
-			document.body.classList.add('dark')
-			btnRef.current.classList.add('dark-mode-btn--active')
-		} else {
-			document.body.classList.remove('dark')
-			btnRef.current.classList.remove('dark-mode-btn--active')
+		try {
+			if (darkMode === 'dark') {
+				document.body.classList.add('dark')
+				btnRef.current.classList.add('dark-mode-btn--active')
+			} else {
+				document.body.classList.remove('dark')
+				btnRef.current.classList.remove('dark-mode-btn--active')
+			}
+		} catch (error) {
+			// Handle the error, e.g., log it
+			console.error('Error applying dark mode:', error)
 		}
 	}, [darkMode])
 
 	const toggleDarkMode = () => {
-		setDarkMode(currenValue => {
-			return currenValue === 'light' ? 'dark' : 'light'
+		setDarkMode(currentValue => {
+			return currentValue === 'light' ? 'dark' : 'light'
 		})
 	}
 
